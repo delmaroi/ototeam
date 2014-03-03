@@ -20,3 +20,4 @@
           %td= link_to 'Show', group
           %td= link_to 'Edit', edit_group_path(group)
           %td= link_to 'Destroy', group, :data => { confirm: 'Are you sure?' }, :method => :delete
+=paginate @groups

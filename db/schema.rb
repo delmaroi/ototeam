@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(version: 20140227171607) do
     t.string "name"
     t.datetime "date_start"
     t.text "description"
+    t.datetime "invite_start"
+    t.datetime "invite_end"
+    t.integer "member_min"
+    t.integer "member_max"
+    t.string "time_limit"
+    t.boolean "take_part"
+    t.boolean "public_list"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,7 +14,7 @@ end
   Group.create(name: "Groups ##{i}")
 end
 
-5.times do |i|
-  Event.create(name: "Event ##{i}", date_start: time_rand, description: "Lorem.....")
-end
+#5.times do |i|
+#  Event.create(name: "Event ##{i}", date_start: time_rand, description: "Lorem.....")
+#end
 
