@@ -11,41 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227171607) do
+ActiveRecord::Schema.define(version: 20140306145008) do
 
   create_table "events", force: true do |t|
-    t.string "name"
+    t.string   "name"
     t.datetime "date_start"
-    t.text "description"
+    t.text     "description"
     t.datetime "invite_start"
     t.datetime "invite_end"
-    t.integer "member_min"
-    t.integer "member_max"
-    t.string "time_limit"
-    t.boolean "take_part"
-    t.boolean "public_list"
+    t.integer  "member_min"
+    t.integer  "member_max"
+    t.string   "time_limit"
+    t.boolean  "take_part"
+    t.boolean  "public_list"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "friends", force: true do |t|
-    t.string "name"
-    t.string "email"
-    t.integer "phone"
+    t.string   "name"
+    t.string   "email"
+    t.integer  "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "groups", force: true do |t|
-    t.string "name"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "posts", force: true do |t|
-    t.string "name"
-    t.text "description"
-    t.boolean "active"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

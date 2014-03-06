@@ -4,9 +4,12 @@ class EventsController < ApplicationController
   # GET /events
   def index
     #@events = Event.all
-    @events = Event.order(:name).page params[:page]
 
 
+    @search = Event.search(params[:q])
+    @events = @search.result
+
+    #@events = Event.order(:name).page params[:page]
   end
 
   # GET /events/1

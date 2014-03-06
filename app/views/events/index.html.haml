@@ -11,6 +11,13 @@
         %th Name
         %th Date start
         %th Description
+        %th Invite_start
+        %th Invite_end
+        %th Member_min
+        %th Member_max
+        %th Time_limit
+        %th Take_part
+        %th Public_list
         %th
         %th
         %th
@@ -21,7 +28,24 @@
           %td= event.name
           %td= event.date_start
           %td= event.description
+          %td= event.invite_start
+          %td= event.invite_end
+          %td= event.member_min
+          %td= event.member_max
+          %td= event.time_limit
+          %td= event.take_part
+          %td= event.public_list
           %td= link_to 'Show', event
           %td= link_to 'Edit', edit_event_path(event)
           %td= link_to 'Destroy', event, :data => { confirm: 'Are you sure?' }, :method => :delete
 =paginate @events
+
+%h1 Search
+= search_form_for @search do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :description
+  = f.text_field :description
+  = f.label :date_start
+  = f.date_select :date_start
+  = f.submit
