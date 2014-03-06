@@ -9,6 +9,8 @@ def time_rand from = 0.0, to = Time.now
   Time.at(from + rand * (to.to_f - from.to_f))
 end
 
+user = User.create(email: "test@test.pl", password: "testest")
+
 5.times do |i|
   Friend.create(name: "Friend ##{i}", email: "##{i}@test.pl", phone: "##{i}")
 end
@@ -19,7 +21,7 @@ end
 
 5.times do |i|
   Event.create(
-
+      creator: user,
       name: "Event ##{i}", date_start: time_rand, description: "Lorem.....",invite_start: time_rand,invite_end: time_rand,
       member_min: "#{i}",
       member_max: "#{i}",

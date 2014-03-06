@@ -1,15 +1,13 @@
 class EventsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
   def index
     #@events = Event.all
-
-
     @search = Event.search(params[:q])
-    @events = @search.result
+    @events = @search.result.order(:name).page params[:page]
 
-    #@events = Event.order(:name).page params[:page]
   end
 
   # GET /events/1

@@ -2,6 +2,16 @@
   = link_to new_event_path, :class => 'btn btn-primary' do
     %span.glyphicon.glyphicon-plus
     New Event
+
+%h1 Search
+= search_form_for @search do |f|
+  = f.label :name_cont
+  = f.text_field :name_cont
+  = f.label :description_cont
+  = f.text_field :description_cont
+  = f.label :date_start_eq
+  = f.date_select :date_start_eq
+  = f.submit
   %h1 Listing events
 
 .table-responsive
@@ -39,13 +49,3 @@
           %td= link_to 'Edit', edit_event_path(event)
           %td= link_to 'Destroy', event, :data => { confirm: 'Are you sure?' }, :method => :delete
 =paginate @events
-
-%h1 Search
-= search_form_for @search do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :description
-  = f.text_field :description
-  = f.label :date_start
-  = f.date_select :date_start
-  = f.submit
