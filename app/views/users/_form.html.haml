@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :email
     = f.input :name
-
+  .form-checkbox
+    = f.association :groups, as: :check_boxes
   .form-actions
     = f.button :submit

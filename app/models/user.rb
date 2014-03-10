@@ -5,5 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :events, foreign_key: :creator_id
+  has_many :groups, foreign_key: :creator_id
+  has_many :friends, foreign_key: :creator_id
+
 
 end
